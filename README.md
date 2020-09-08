@@ -15,15 +15,27 @@ There some extra features to come:
 
 
 ### Screenshots
-- The GUI:
 
-- The Pie Charts (for Tel Aviv - Yafo)
+- #### The GUI
+<img src="/Screenshots/GUI-general.png" width="50%" height="50%">
 
-- The GUI after successful update
 
-- The GUI after successful plot
+- #### The Pie Charts (for Tel Aviv - Yafo)
+<img src="/Screenshots/Graphs.png" width="90%" height="90%">
 
-- The GUI after fail plot 
+
+- #### The GUI after successful update
+<img src="/Screenshots/Update S.png" width="50%" height="50%">
+
+
+- #### The GUI after successful plot
+<img src="/Screenshots/Graph S.png" width="50%" height="50%">
+
+
+- #### The GUI after fail plot
+<img src="/Screenshots/Graph F.png" width="50%" height="50%">
+
+
 
 
 ### Tech & Framework 
