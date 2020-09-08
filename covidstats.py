@@ -21,7 +21,7 @@ def update_data_table():
     # Loading the driver
     # First try with local chromedriver, else install one.
     try:
-        driver = webdriver.Chrome(executable_path="Sagi CV/Projects/chromedriver")
+        driver = webdriver.Chrome(executable_path="chromedriver")
     except:
         driver = webdriver.Chrome(ChromeDriverManager().install())
 
