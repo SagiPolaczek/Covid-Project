@@ -2,7 +2,8 @@ from selenium import webdriver
 from webdriver_manager.chrome import ChromeDriverManager
 import pandas as pd
 import matplotlib.pyplot as plt
-
+from matplotlib.backends.backend_tkagg import FigureCanvasTkAgg
+import tkinter as tk
 
 
 
@@ -66,26 +67,14 @@ def update_data_table():
     covid_areas.to_csv('covid_data.csv')
     
 
+def plot_city_data(city, canvas_1, canvas_2, canvas_3, root):
 
-def pie_plot(labels, values):
     """
-    Plotting pie graph by labels and values.
-    """
-    ax1 = plt.subplots()[1]
-    ax1.pie(values, labels=labels, autopct='%1.1f%%',
-            shadow=True, startangle=90)
-    ax1.axis('equal')  # Equal aspect ratio ensures that pie is drawn as a circle.
-
-
-
-def plot_city_data(city):
-    """
-    Ploting 3 graphs which presenting proportions:
+    Ploting 3 graphs which presenting the following proportions:
         1. Total Cases / Population
         2. Active Cases / Total Cases
         3. New Cases / Tests  - (in the past week)
     """
-        
 
     # Read Data
     covid_data = pd.read_csv('covid_data.csv')
@@ -103,11 +92,35 @@ def plot_city_data(city):
     # Assigning figures' values and labels
     fig1_labels, fig1_values = ['Population', 'Total Cases'], [population, total_cases]
     fig2_labels, fig2_values = ['Total Cases', 'Active Cases'], [total_cases, active_cases]
-    fig3_labels, fig3_values = ['Total Tests (per week)', 'New Cases (per week)'], [tests_week, cases_week]
+    fig3_labels, fig3_values = ['Total Tests (past week)', 'New Cases (past week)'], [tests_week, cases_week]
 
-    # Ploting with written function.
-    pie_plot(fig1_labels, fig1_values)
-    pie_plot(fig2_labels, fig2_values)
-    pie_plot(fig3_labels, fig3_values)
+    # Ploting the pie charts on the GUI
 
-    plt.show()
+    figure1 = plt.Figure(figsize=(10,5), dpi=100)
+    ax1 = figure1.add_subplot(111)
+    chart_type1 = FigureCanvasTkAgg(figure1, canvas_1)
+    chart_type1.get_tk_widget().pack()
+    ax1.pie(fig1_values, labels=fig1_labels, autopct='%1.1f%%',
+            shadow=True, startangle=90)
+    ax1.axis('equal')
+    figure1.set_facecolor('#DC7963')
+
+
+    figure2 = plt.Figure(figsize=(10,5), dpi=100)
+    ax2 = figure2.add_subplot(111)
+    chart_type2 = FigureCanvasTkAgg(figure2, canvas_2)
+    chart_type2.get_tk_widget().pack()
+    ax2.pie(fig2_values, labels=fig2_labels, autopct='%1.1f%%',
+            shadow=True, startangle=90)
+    ax2.axis('equal')
+    figure2.set_facecolor('#DC7963')
+
+
+    figure3 = plt.Figure(figsize=(10,5), dpi=100)
+    ax3 = figure3.add_subplot(111)
+    chart_type3 = FigureCanvasTkAgg(figure3, canvas_3)
+    chart_type3.get_tk_widget().pack()
+    ax3.pie(fig3_values, labels=fig3_labels, autopct='%1.1f%%',
+            shadow=True, startangle=90)
+    ax3.axis('equal')
+    figure3.set_facecolor('#DC7963')    
