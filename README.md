@@ -10,31 +10,22 @@ furthermore, the information is often dispropotionately represented, so my passi
 
 ### Build Status
 There some extra features to come:
-  - [ ] The data will be represented **on the GUI itselfs**.
+  - [x] The data will be represented **on the GUI itselfs**.
   - [ ] The input absorption will be **more forgiving**.
-
+  - [ ] The user will be able to plot graphs **several times in one run**.
 
 ### Screenshots
 
-- #### The GUI
-<img src="/Screenshots/GUI-general.png" width="50%" height="50%">
+- #### The GUI (Opening Window)
+<img src="/Screenshots/Main.png" width="60%" height="60%">
 
 
 - #### The Pie Charts (for Tel Aviv - Yafo)
-<img src="/Screenshots/Graphs.png" width="90%" height="90%">
+<img src="/Screenshots/Graphs.png" width="60%" height="60%">
 
 
 - #### The GUI after successful update
-<img src="/Screenshots/Update S.png" width="50%" height="50%">
-
-
-- #### The GUI after successful plot
-<img src="/Screenshots/Graph S.png" width="50%" height="50%">
-
-
-- #### The GUI after fail plot
-<img src="/Screenshots/Graph F.png" width="50%" height="50%">
-
+<img src="/Screenshots/Update Succeeded.png" width="60%" height="60%">
 
 
 
@@ -44,9 +35,14 @@ There some extra features to come:
  
 ### Data Sources References:
 - [**COVID-19 Data (Ministry of Health)**](https://datadashboard.health.gov.il/COVID-19/general)
-- [**City Population (Data Gov)**](https://data.gov.il/dataset/residents_in_israel_by_communities_and_age_groups/resource/64edd0ee-3d5d-43ce-8562-c336c24dbc1f)
+
+  Scraping from this website the Covid-19 data.
+- [**City Population (Data Gov)**](https://data.gov.il/dataset/residents_in_israel_by_communities_and_age_groups/resource/64edd0ee-3d5d-43ce-8562-c336c24dbc1f)ֿ
+
+  Used for adding the total population amount to the Covid-19 table (With simple pandas' operations).
 - [**List of cities Israel for translation) (Data Gov)**](https://data.gov.il/dataset/citiesandsettelments/resource/5c78e9fa-c2e2-4771-93ff-7f400a12f7ba)
 
+  User for retrieving Hebrew-English dictionary for translation.
 
 
 
